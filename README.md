@@ -1,8 +1,22 @@
 # Data Engineering
-1.  create a table schema for each of the six CSV files. Remember to specify data types, primary keys, foreign keys, and other constraints.
-  a.  For the primary keys check to see if the column is unique, otherwise create a [composite key](https://en.wikipedia.org/wiki/Compound_key). Which takes to primary keys in order to uniquely identify a row.
-  b.  Be sure to create tables in the correct order to handle foreign keys.
-2.  Import each CSV file into the corresponding SQL table. **Note** be sure to import the data in the same order that the tables were created and account for the headers when importing to avoid errors.
+-- create table for departments with columns dept_no (PRIMARY KEY) and dept_name
+
+-- create table for titles with columns title_id (PRIMARY KEY) and title
+
+-- create table for employees with columns emp_no (PRIMARY KEY),
+    -- emp_title_id ((emp_title_id) REFERENCES titles (title_id)), birth_date,
+    -- first_name, last_name, sex and hire_date
+
+-- create table for dept_emp with columns emp_no (PRIMARY KEY)(FOREIGN KEY (emp_no) 
+    -- REFERENCES employees (emp_no)), dept_no (PRIMARY KEY)(FOREIGN KEY (dept_no)
+    -- REFERENCES departments (dept_no))
+    
+-- create table for dept_manager with columns emp_no (PRIMARY KEY)(FOREIGN KEY (emp_no) 
+    -- REFERENCES employees (emp_no)), dept_no (PRIMARY KEY)(FOREIGN KEY (dept_no)
+    -- REFERENCES departments (dept_no))
+
+-- create table for salaries with columns emp_no (PRIMARY KEY)(FOREIGN KEY (emp_no) 
+    -- REFERENCES employees (emp_no)), salary
 
 # Data Analysis
 -- List the following details of each employee: employee number, last name, first name, sex, and salary.
