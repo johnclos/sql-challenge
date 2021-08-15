@@ -10,7 +10,7 @@ SELECT employees.emp_no,
 	salaries.salary
 FROM employees
 FULL OUTER JOIN salaries ON
-employees.emp_no = salaries.emp_no
+employees.emp_no = salaries.emp_no;
 
 
 -- List first name, last name, and hire date for employees who were hired in 1986.
@@ -98,9 +98,8 @@ FROM dept_emp
 	FULL OUTER JOIN departments
 		ON departments.dept_no = dept_emp.dept_no
 	FULL OUTER JOIN employees ON
-		employees.emp_no = dept_emp.emp_no;
-WHERE departments.dept_name = 'Sales'
-OR departments.dept_name = 'Development';
+		employees.emp_no = dept_emp.emp_no
+WHERE departments.dept_name = 'Sales' OR departments.dept_name = 'Development';
 
 
 -- In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
